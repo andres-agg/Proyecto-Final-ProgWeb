@@ -1,7 +1,9 @@
 :root {
-
     --blanco: #FFFFFF;
     --negro: #000000;
+    --verde: #00FF00;
+    --rojo: #FF0000;
+    --amarillo: #FFC107;
 }
 html {
     box-sizing: border-box;
@@ -15,12 +17,35 @@ body {
     font-family: 'Krub', sans-serif;
     font-size: 1.6rem;
     margin: 0;
+    color: var(--blanco);
+    line-height: 2;
 }
 
 /* Globales */
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
+}
+.flex {
+    display: flex;
+}
+.centrar-texto {
+    text-align: center;
+}
+
+.sombra {
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.separador-w100 {
+    height: .7rem;
+    width: 100rem;
+    background-color: var(--verde);
+    border-radius: 1rem;
+    margin: 4rem auto;
 }
 
 a {
@@ -46,9 +71,9 @@ img {
     max-width: 100%;
 }
 
-/* Header */
+/*** Header ***/
 .header {
-    background-image: url("../img/fondo2.jpg");
+    background-image: url("../img/fondo.jpg");
     height: 60rem;
     background-size: cover;
     background-repeat: no-repeat;
@@ -79,11 +104,9 @@ img {
 .header__tnegritas {
     font-weight: 700;
 }
-.header__text {
-    color: var(--blanco);
+.header__texto {
     text-align: center;
-    padding-top: 20rem;
-    font-size: 2rem;
+    padding-top: 15rem;
 }
 
 /* Navegacion */
@@ -93,4 +116,90 @@ img {
 }
 .navegacion__enlace {
     font-size: 2rem;
+    transition: color .3s ease-in;
+}
+
+.navegacion__enlace:hover {
+    color: var(--verde);
+}
+
+.header__ubicacion {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.header__ubicacion p {
+    margin-bottom: 0;
+}
+
+/* Nuestros Servicios */
+.principal {
+    margin-top: 4rem;
+    color: var(--negro);
+}
+
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+}
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.servicio h3 {
+    font-weight: 400;
+}
+.servicio p{
+    text-align: center;
+}
+.iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--amarillo);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Porque Comprar */
+.seccionComprar {
+    color: var(--negro);
+}
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1rem;
+}
+.bloque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bloque h4 {
+    font-weight: 400;
+}
+.bloque p {
+    text-align: center;
+}
+
+/*** Footer ***/
+.footer {
+    background-color: var(--negro);
+    margin-top: 4rem;
+    padding: 2rem 0;
+}
+.footer__social {
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__social p {
+    font-weight: 700;
+}
+.social {
+    display: flex;
+    gap: 3rem;
 }
